@@ -1,0 +1,5 @@
+{
+  "name": "My heroku node docker party",
+  "description": "Your docker is touching my node",
+  "image": "heroku/nodejs"
+}

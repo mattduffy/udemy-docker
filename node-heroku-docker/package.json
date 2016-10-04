@@ -1,0 +1,15 @@
+{
+  "name": "node-heroku-docker",
+  "version": "1.0.0",
+  "description": "Figure out how to use node, docker and heroku together all at once.",
+  "main": "index.js",
+  "scripts": {
+	"start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "4.14.0"
+  }
+}
