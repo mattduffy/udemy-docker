@@ -2,5 +2,28 @@
 node_modules/
 npm-debug.log
 
+develop-eggs
+build/manifest.json
+dist/
+eggs/
+parts/
+ndist/
+var/
+*.egg-info/
+pip-log.txt
+pip-delete-this-directory.txt
+.DS_Store
+
+instance/settings.py
+
+__pycache__/
+*.py[cad]
+.so
+*/**.DS_Store
+._*
+.*.sw*
+*_
+
+
 
 

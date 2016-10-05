@@ -1,0 +1,29 @@
+postgres:
+  image: postgres:9.4.5
+  environment:
+    POSTGRES_USER: mobydock
+    POSTGRES_PASSWORD: yourpassword
+  ports:
+    - '5432:5432'
+  volumes:
+    - ~/.docker-volumes/mobydock/postgresql/data:/var/lib/postgresql/data
+
+redis:
+  image: redis:2.8.22
+  ports:
+    - '6379:6379'
+  volumes:
+    - ~/.docker-volumes/mobydock/redis/data:/var/lib/redis/data
+
+mobydock:
+  build: .
+  command: gunicorn -b 0.0.0.0:8000 --reload --access-logfile - "mobydock.app:create_app()"
+  environment:
+    PYTHONUNBUFFERED: 'true'
+  links:
+    - postgres
+    - redis
+  volumes:
+    - .:/mobydock
+  ports:
+    - '8000:8000'
